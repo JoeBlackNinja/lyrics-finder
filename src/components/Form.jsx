@@ -3,7 +3,7 @@ import useLyrics from "../hooks/useLyrics";
 
 const Form = () => {
 
-    const { setAlert } = useLyrics();
+    const { setAlert, searchingLyric } = useLyrics();
 
     const [searching,setSearching] = useState({
         artist:'',
@@ -16,7 +16,7 @@ const Form = () => {
             setAlert('Type artist and song names')
             return
         }
-        setAlert('')
+        searchingLyric(searching);
     }
 
   return (
